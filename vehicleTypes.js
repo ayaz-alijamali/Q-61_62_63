@@ -44,3 +44,39 @@ let exampleStudent = new Student("Ayaz Ali", 27, ["AI", "Web 3.O", "Metaverse"])
 
 // Get and display student information
 console.log(exampleStudent.getInfo());
+
+
+
+// Question _________ 63
+
+
+// Define a type alias for Shape that can be either a Circle or a Rectangle
+type Shape = Circle | Rectangle;
+
+// Define interfaces for Circle and Rectangle
+interface Circle {
+    kind: "circle";
+    radius: 5;
+}
+
+interface Rectangle {
+    kind: "rectangle";
+    width: 10;
+    height: 20;
+}
+
+// Example usage
+let circle: Circle = { kind: "circle", radius: 5 };
+let rectangle: Rectangle = { kind: "rectangle", width: 20, height: 10 };
+
+function describeShape(shape: Shape) {
+    if (shape.kind === "circle") {
+        console.log(`Circle - Radius: ${shape.radius}`);
+    } else if (shape.kind === "rectangle") {
+        console.log(`Rectangle - Width: ${shape.width}, Height: ${shape.height}`);
+    }
+}
+
+// Describe the circle and rectangle
+describeShape(circle);
+describeShape(rectangle);
